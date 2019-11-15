@@ -10,6 +10,9 @@ Go.
 
 gof supports multiple feeds and multiple accounts.
 
+[Pleroma]: https://pleroma.social
+[feediverse]: https://github.com/edsu/feediverse
+
 ## usage
 
 The first time you use gof, it'll ask you about your Pleroma instance.
