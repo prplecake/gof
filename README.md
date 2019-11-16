@@ -29,6 +29,28 @@ Once gof is configured, you might want to add it to your crontab:
 */30 * * * * /path/to/gof
 ```
 
+## post format
+
+You can specify how the message looks. The variables you have to work
+with are `URL`, `Title`, and `Summary`. You don't have to use all
+variables.
+
+An example template:
+
+```yaml
+template: '{{.Title}}: {{.URL}}'
+```
+
+If you want the message to include line breaks, use YAML's multiline
+syntax:
+
+```yaml
+template: |-
+  {{.Title}}
+
+  {{.URL}}
+```
+
 ## resources
 
 Additional documentation can be found in [gof's wiki][wiki].
