@@ -1,0 +1,6 @@
+clientID:
+clientSecret:
+accessToken:
+feeds:
+  - template: '{title} {url}'
+    url: https://yoursite.com/feed.xml
