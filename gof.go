@@ -1,16 +1,31 @@
 package main
 
 import (
+	"bytes"
 	"log"
 	"net/url"
+	"text/template"
 
 	//"github.com/McKael/madon"
 	"github.com/SlyMarbo/rss"
 )
 
+type article struct {
+	Title, URL, Summary string
+}
+
 func main() {
 	log.Println("gof starting up...")
 	config := readConfig()
+
+	var tpls = make(map[string]*template.Template)
+	for _, f := range config.Feeds {
+		tmpl, err := template.New(f.URL).Parse(f.Template)
+		if err != nil {
+			log.Fatalf("Failed to parse template [%s]. Error: %s", f.Template, err.Error())
+		}
+		tpls[f.URL] = tmpl
+	}
 
 	// Get feeds
 	log.Println("Fetching feeds...")
@@ -50,6 +65,10 @@ func main() {
 
 		// Loop through items
 		for _, item := range items {
+			if item.Date.Before(config.LastUpdated) {
+				log.Println("No new items. Skipping.")
+				continue
+			}
 			itemLink, err := url.Parse(item.Link)
 			if err != nil {
 				log.Fatal("failed parsing article URL of the feed item")
@@ -60,6 +79,16 @@ func main() {
 			log.Printf("Item Data:\n\tTimestamp: %s\n\tSite URL: %s\n\tFeed Title: %s\n\tItem Title: %s\n\tItem URL: %s\n",
 				item.Date, base.ResolveReference(feedLink).String(),
 				feed.Title, item.Title, base.ResolveReference(itemLink).String())
+			i := article{
+				Title: item.Title,
+				URL:   base.ResolveReference(itemLink).String(),
+			}
+			buf := new(bytes.Buffer)
+			err = tpls[base.String()].Execute(buf, i)
+			if err != nil {
+				log.Fatalf("Error executing template [%s]. Error: %s", tpls[base.String()], err.Error())
+			}
+			log.Println("Message: ", buf.String())
 		}
 	}
 
