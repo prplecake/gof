@@ -6,7 +6,6 @@ import (
 	"net/url"
 	"text/template"
 
-	//"github.com/McKael/madon"
 	"github.com/SlyMarbo/rss"
 )
 
