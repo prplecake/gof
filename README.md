@@ -17,7 +17,7 @@ gof supports multiple feeds and multiple accounts.
 
 The first time you use gof, it'll ask you about your Pleroma instance.
 You'll need an access token as well. The configuration will be saved in
-`~/.gof`, unless you specify otherwise:
+`./gof.yaml`, unless you specify otherwise:
 
 ```
 gof
