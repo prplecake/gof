@@ -1,6 +1,22 @@
-clientID:
-clientSecret:
-accessToken:
-feeds:
-  - template: '{title} {url}'
-    url: https://yoursite.com/feed.xml
+accounts:
+- clientid: 
+  clientsecret: 
+  accesstoken: 
+  name: gof
+  instanceurl: https://yourinstance.nice
+  feeds:
+  - url: https://yourfeed.com
+    template: '{{.Title}} {{.URL}}'
+    summary: true
+- clientid:
+  clientsecret: 
+  accesstoken:
+  name: gof
+  instanceurl: https://splat.soy
+  feeds:
+  - url: https://your.otherfeed.net
+    template: |-
+      {{.Title}}
+
+      {{.URL}}
+    summary: false
