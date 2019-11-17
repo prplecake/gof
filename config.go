@@ -19,13 +19,18 @@ type feed struct {
 }
 
 type config struct {
+	Accounts    []Account
+	LastUpdated time.Time
+}
+
+// An Account holds the information required to use that account.
+type Account struct {
 	ClientID     string
 	ClientSecret string
 	AccessToken  string
 	Name         string
 	InstanceURL  string
 	Feeds        []feed
-	LastUpdated  time.Time
 }
 
 func readConfig() *config {
