@@ -15,12 +15,22 @@ gof supports multiple feeds and multiple accounts.
 
 ## usage
 
-The first time you use gof, it'll ask you about your Pleroma instance.
-You'll need an access token as well. The configuration will be saved in
-`./gof.yaml`, unless you specify otherwise:
+Before you can start using gof, you'll need to configure it. An example
+configuration can be found [here][config-blob]. You can also just copy
+the example:
 
 ```
-gof
+$ cd $REPO
+$ cp config.yaml.example config.yaml
+$ vim config.yaml # don't forget to edit it!
+```
+
+You'll need an access token as well. The configuration will be saved in
+`$REPO/gof.yaml`:
+
+```
+$ go build
+$ ./gof
 ```
 
 Once gof is configured, you might want to add it to your crontab:
@@ -29,11 +39,15 @@ Once gof is configured, you might want to add it to your crontab:
 */30 * * * * /path/to/gof
 ```
 
+[config-blob]: https://git.sr.ht/~mjorgensen/gof/tree/master/gof.yaml.example
+
 ## post format
 
 You can specify how the message looks. The variables you have to work
 with are `URL`, `Title`, and `Summary`. You don't have to use all
 variables.
+
+TODO: `Summary` isn't implemented yet. 
 
 An example template:
 
