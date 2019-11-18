@@ -36,7 +36,7 @@ $ ./gof
 Once gof is configured, you might want to add it to your crontab:
 
 ```
-*/30 * * * * /path/to/gof
+*/30 * * * * cd /path/to/$REPO; gof
 ```
 
 [config-blob]: https://git.sr.ht/~mjorgensen/gof/tree/master/gof.yaml.example
