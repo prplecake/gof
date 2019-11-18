@@ -24,7 +24,6 @@ type article struct {
 func main() {
 	log.Println("gof starting up...")
 	conf = readConfig()
-	log.Print(conf.Accounts)
 
 	var tpls = make(map[string]*template.Template)
 	for _, a := range conf.Accounts {
