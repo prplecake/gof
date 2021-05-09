@@ -33,6 +33,7 @@ func main() {
 	conf = readConfig(configFile)
 
 	var tpls = make(map[string]*template.Template)
+	var formats = make(map[string]string)
 	for _, a := range conf.Accounts {
 		for _, f := range a.Feeds {
 			tmpl, err := template.New(f.URL).Parse(f.Template)
@@ -40,6 +41,7 @@ func main() {
 				log.Fatalf("Failed to parse template [%s]. Error: %s", f.Template, err.Error())
 			}
 			tpls[f.URL] = tmpl
+			formats[f.URL] = f.Format
 		}
 	}
 
@@ -105,7 +107,7 @@ func main() {
 				if err != nil {
 					log.Fatalf("Error executing template [%s]. Error: %s", tpls[base.String()], err.Error())
 				}
-				if err = postMessage(account, buf.String()); err != nil {
+				if err = postMessage(account, buf.String(), formats[base.String()]); err != nil {
 					log.Fatalf("Failed to post message \"%s\". Error: %s", buf.String(), err.Error())
 				}
 
@@ -119,12 +121,23 @@ func main() {
 	conf.Save()
 }
 
-func postMessage(account Account, message string) error {
+func postMessage(account Account, message string, format string) error {
 	apiURL := account.InstanceURL + "/api/v1/statuses"
 
 	data := url.Values{}
 	data.Set("status", message)
 	data.Set("visibility", "unlisted")
+
+	switch format {
+	case "markdown":
+		data.Set("content_type", "text/markdown")
+	case "html":
+		data.Set("content_type", "text/html")
+	case "plain":
+		data.Set("content_type", "text/plain")
+	case "bbcode":
+		data.Set("content_type", "text/bbcode")
+	}
 
 	var req *http.Request
 	var body io.Reader

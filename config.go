@@ -15,6 +15,7 @@ var (
 
 type feed struct {
 	URL, Template string
+	Format        string
 	Summary       bool
 }
 

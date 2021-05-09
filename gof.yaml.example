@@ -17,4 +17,5 @@ accounts:
       {{.Title}}
 
       {{.URL}}
+    format: plain
     summary: false
