@@ -101,16 +101,4 @@ format: markdown
 
 See configuration details [in the wiki][wiki-formatting].
 
-[wiki-formatting]:https://man.sr.ht/~mjorgensen/gof/configuration.md#format
-
-## resources
-
-Discussion and patches are welcome and should be directed to my public
-inbox for now: [~mjorgensen/public-inbox@lists.sr.ht][lists]. Please use
-``--subject-prefix PATCH gof`` for clarity when sending patches.
-
-Bugs, issues, planning, and tasks can all be found at the tracker: 
-[~mjorgensen/gof][todo]
-
-[lists]: https://lists.sr.ht/~mjorgensen/public-inbox
-[todo]: https://todo.sr.ht/~mjorgensen/gof
+[wiki-formatting]:https://github.com/prplecake/gof/wiki/Configuration#format
