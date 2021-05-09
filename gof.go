@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"flag"
 	"io"
 	"log"
 	"net/http"
@@ -22,8 +23,14 @@ type article struct {
 }
 
 func main() {
+	var configFile string
+	flag.StringVar(&configFile, "c", "gof.yaml", "the configuration file to use")
+	flag.Parse()
+
+	log.Println(configFile)
+
 	log.Println("gof starting up...")
-	conf = readConfig()
+	conf = readConfig(configFile)
 
 	var tpls = make(map[string]*template.Template)
 	for _, a := range conf.Accounts {

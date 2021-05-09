@@ -33,11 +33,11 @@ type Account struct {
 	Feeds        []feed
 }
 
-func readConfig() *config {
+func readConfig(fileName string) *config {
 	usr, _ := user.Current()
 	dir = usr.HomeDir
 	log.Println("reading config...")
-	configFile = "gof.yaml"
+	configFile = fileName
 	config := new(config)
 	cf, err := os.ReadFile(configFile)
 	if err != nil {
