@@ -25,12 +25,10 @@ type config struct {
 
 // An Account holds the information required to use that account.
 type Account struct {
-	ClientID     string
-	ClientSecret string
-	AccessToken  string
-	Name         string
-	InstanceURL  string
-	Feeds        []feed
+	AccessToken string
+	Name        string
+	InstanceURL string
+	Feeds       []feed
 }
 
 func readConfig(fileName string) *config {
