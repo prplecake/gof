@@ -1,5 +1,7 @@
 # .github/workflows/release.yaml
 
+name: Release Go Binary
+
 on: 
   release:
     types: [created]
