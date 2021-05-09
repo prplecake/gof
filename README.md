@@ -25,18 +25,36 @@ the example:
 
 ```
 $ cd $REPO
-$ cp config.yaml.example config.yaml
-$ vim config.yaml # don't forget to edit it!
+$ cp gof.yaml.example gof.yaml
+$ vim gof.yaml # don't forget to edit it!
 ```
 
-You'll need an access token as well. The configuration will be saved in
-`$REPO/gof.yaml`:
+You'll need an access token as well. You can get on from the [Pleroma
+Access Token Generator][pleroma-access-token].
+
+[pleroma-access-token]:https://tools.splat.soy/pleroma-access-token/
+
+Build the thing:
 
 ```
 $ go build
+```
+
+Then you can use it:
+
+```
 $ ./gof
 ```
 
+You could also specify the configuration file to use via the command
+line:
+
+```
+$ ./gof -c /path/to/your/gof.yaml
+```
+
+This would allow you to place the executable (and configuration)
+anywhere on your system.
 Once gof is configured, you might want to add it to your crontab:
 
 ```
@@ -68,6 +86,22 @@ template: |-
 
   {{.URL}}
 ```
+
+Formatted posts are also supported. You can choose from plaintext,
+Markdown, HTML, or BBCode, as long as they’re supported by your Pleroma
+instance.
+
+```yaml
+template: |-
+  **{{.Title}}**
+
+  {{.URL}}
+format: markdown
+```
+
+See configuration details [in the wiki][wiki-formatting].
+
+[wiki-formatting]:https://man.sr.ht/~mjorgensen/gof/configuration.md#format
 
 ## resources
 
