@@ -67,8 +67,6 @@ template: |-
 
 ## resources
 
-Additional documentation can be found in [gof's wiki][wiki].
-
 Discussion and patches are welcome and should be directed to my public
 inbox for now: [~mjorgensen/public-inbox@lists.sr.ht][lists]. Please use
 ``--subject-prefix PATCH gof`` for clarity when sending patches.
@@ -76,6 +74,5 @@ inbox for now: [~mjorgensen/public-inbox@lists.sr.ht][lists]. Please use
 Bugs, issues, planning, and tasks can all be found at the tracker: 
 [~mjorgensen/gof][todo]
 
-[wiki]: https://man.sr.ht/~mjorgensen/gof
 [lists]: https://lists.sr.ht/~mjorgensen/public-inbox
 [todo]: https://todo.sr.ht/~mjorgensen/gof
