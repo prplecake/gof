@@ -47,7 +47,7 @@ func main() {
 
 	for _, account := range conf.Accounts {
 		// Get feeds
-		log.Println("Fetching feeds...")
+		log.Printf("Fetching feeds for account [%s]...", account.Name)
 		var feeds []*rss.Feed
 		for _, source := range account.Feeds {
 			feed, err := rss.Fetch(source.URL)
@@ -56,7 +56,7 @@ func main() {
 				continue
 			}
 			feeds = append(feeds, feed)
-			log.Printf("Fetched %s", feed.Title)
+			log.Printf("Fetched [%s]", feed.Title)
 		}
 		if len(feeds) == 0 {
 			log.Fatal("Expected at least one feed to successfully fetch.")
