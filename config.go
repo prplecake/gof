@@ -1,8 +1,8 @@
 package main
 
 import (
-	"io/ioutil"
 	"log"
+	"os"
 	"os/user"
 	"time"
 
@@ -39,7 +39,7 @@ func readConfig() *config {
 	log.Println("reading config...")
 	configFile = "gof.yaml"
 	config := new(config)
-	cf, err := ioutil.ReadFile(configFile)
+	cf, err := os.ReadFile(configFile)
 	if err != nil {
 		log.Fatalln("Failed to read config: ", err)
 	}
@@ -61,7 +61,7 @@ func (cf *config) Save() error {
 	if err != nil {
 		log.Fatalln("Failed to marshal config: ", err.Error())
 	}
-	err = ioutil.WriteFile(configFile, cfbytes, 0644)
+	err = os.WriteFile(configFile, cfbytes, 0644)
 	if err != nil {
 		log.Fatalf("Failed to save config to file. Error: %s", err.Error())
 	}
