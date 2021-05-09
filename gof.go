@@ -99,8 +99,9 @@ func main() {
 					item.Date, base.ResolveReference(feedLink).String(),
 					feed.Title, item.Title, base.ResolveReference(itemLink).String())
 				i := article{
-					Title: item.Title,
-					URL:   base.ResolveReference(itemLink).String(),
+					Title:   item.Title,
+					Summary: item.Summary,
+					URL:     base.ResolveReference(itemLink).String(),
 				}
 				buf := new(bytes.Buffer)
 				err = tpls[base.String()].Execute(buf, i)
