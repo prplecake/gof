@@ -1,3 +1,8 @@
+# macOS crap
 .DS_Store
+
+# Compiled binary
 gof
+
+# Config files / secrets
 gof.yaml
