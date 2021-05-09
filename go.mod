@@ -1,6 +1,6 @@
 module git.sr.ht/~mjorgensen/gof
 
-go 1.13
+go 1.16
 
 require (
 	github.com/SlyMarbo/rss v1.0.1

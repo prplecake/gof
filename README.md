@@ -13,6 +13,10 @@ gof supports multiple feeds and multiple accounts.
 [Pleroma]: https://pleroma.social
 [feediverse]: https://github.com/edsu/feediverse
 
+## requirements
+
+* Go 1.16
+
 ## usage
 
 Before you can start using gof, you'll need to configure it. An example
