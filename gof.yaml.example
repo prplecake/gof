@@ -1,6 +1,5 @@
 accounts:
-- clientid: 
-  clientsecret: 
+- name:
   accesstoken: 
   name: gof
   instanceurl: https://yourinstance.nice
@@ -8,8 +7,7 @@ accounts:
   - url: https://yourfeed.com
     template: '{{.Title}} {{.URL}}'
     summary: true
-- clientid:
-  clientsecret: 
+- name:
   accesstoken:
   name: gof
   instanceurl: https://splat.soy
