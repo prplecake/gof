@@ -69,8 +69,6 @@ You can specify how the message looks. The variables you have to work
 with are `URL`, `Title`, and `Summary`. You don't have to use all
 variables.
 
-TODO: `Summary` isn't implemented yet. 
-
 An example template:
 
 ```yaml
@@ -94,6 +92,8 @@ instance.
 ```yaml
 template: |-
   **{{.Title}}**
+
+  > {{.Summary}}
 
   {{.URL}}
 format: markdown
