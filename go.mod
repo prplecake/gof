@@ -1,4 +1,4 @@
-module git.sr.ht/~mjorgensen/gof
+module github.com/prplecake/gof
 
 go 1.16
 

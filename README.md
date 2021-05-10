@@ -61,7 +61,7 @@ Once gof is configured, you might want to add it to your crontab:
 */30 * * * * cd /path/to/$REPO; gof
 ```
 
-[config-blob]: https://git.sr.ht/~mjorgensen/gof/tree/master/gof.yaml.example
+[config-blob]:https://github.com/prplecake/gof/blob/master/gof.yaml.example
 
 ## post format
 
