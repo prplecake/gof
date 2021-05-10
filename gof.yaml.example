@@ -1,15 +1,13 @@
 accounts:
-- name:
+- name: instance.nice
   accesstoken: 
-  name: gof
   instanceurl: https://yourinstance.nice
   feeds:
   - url: https://yourfeed.com
     template: '{{.Title}} {{.URL}}'
     summary: true
-- name:
+- name: splat.soy
   accesstoken:
-  name: gof
   instanceurl: https://splat.soy
   feeds:
   - url: https://your.otherfeed.net
