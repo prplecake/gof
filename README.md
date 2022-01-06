@@ -61,7 +61,7 @@ Once gof is configured, you might want to add it to your crontab:
 */30 * * * * cd /path/to/$REPO; gof
 ```
 
-[config-blob]:https://git.sr.ht/~mjorgensen/gof/tree/master/item/gof.yaml.example
+[config-blob]:https://github.com/prplecake/gof/blob/master/gof.yaml.example
 
 ## post format
 
@@ -101,19 +101,4 @@ format: markdown
 
 See configuration details [in the wiki][wiki-formatting].
 
-[wiki-formatting]:https://man.sr.ht/~mjorgensen/gof/configuration.md#format
-
-## Resources
-
-Comprehensive documentation [can be found here][man].
-
-Discussion and patches are welcome to my [public inbox][public-inbox]:
-~mjorgensen/public-inbox@lists.sr.ht. Please use `--subject prefix PATCH
-gof` for clarity when sending patches.
-
-Bugs, issues, planning, and tasks can all be found at the tracker: 
-[~mjorgensen/gof][todo].
-
-[man]: https://man.sr.ht/~mjorgensen/gof
-[todo]: https://todo.sr.ht/~mjorgensen/gof
-[public-inbox]:https://lists.sr.ht/~mjorgensen/public-inbox
+[wiki-formatting]:https://github.com/prplecake/gof/wiki/Configuration#format
