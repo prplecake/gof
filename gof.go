@@ -15,7 +15,9 @@ import (
 )
 
 var (
-	conf *config
+	conf          *config
+	debug         bool
+	debugOrDryRun bool
 )
 
 type article struct {
@@ -23,9 +25,16 @@ type article struct {
 }
 
 func main() {
-	var configFile string
+	var (
+		configFile string
+		dryRun     bool
+	)
 	flag.StringVar(&configFile, "c", "gof.yaml", "the configuration file to use")
+	flag.BoolVar(&dryRun, "dry-run", false, "whether to perform a dry run or not")
+	flag.BoolVar(&debug, "debug", false, "enable debugging")
 	flag.Parse()
+
+	debugOrDryRun = debug || dryRun
 
 	log.Println(configFile)
 
@@ -115,15 +124,16 @@ func main() {
 				if err = postMessage(account, buf.String(), formats[base.String()]); err != nil {
 					log.Fatalf("Failed to post message \"%s\". Error: %s", buf.String(), err.Error())
 				}
-
 			}
 		}
 	}
 
-	// update timestamp in config
-	conf.updateLastUpdated()
-	// save config
-	conf.Save()
+	if !debugOrDryRun {
+		// update timestamp in config
+		conf.updateLastUpdated()
+		// save config
+		conf.Save()
+	}
 }
 
 func postMessage(account Account, message string, format string) error {
@@ -148,6 +158,10 @@ func postMessage(account Account, message string, format string) error {
 	var body io.Reader
 	body = strings.NewReader(data.Encode())
 
+	if debug {
+		log.Printf("Message:\n\n%s", message)
+	}
+
 	req, err := http.NewRequest("POST", apiURL, body)
 	if err != nil {
 		return err
@@ -159,13 +173,16 @@ func postMessage(account Account, message string, format string) error {
 
 	c := &http.Client{Timeout: time.Second * 10}
 
-	resp, err := c.Do(req)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
+	if !debugOrDryRun {
+		var resp *http.Response
+		resp, err = c.Do(req)
+		if err != nil {
+			return err
+		}
+		defer resp.Body.Close()
 
-	log.Println("response Status: ", resp.Status)
+		log.Println("response Status: ", resp.Status)
+	}
 
 	return nil
 }
