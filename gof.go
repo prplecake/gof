@@ -56,10 +56,15 @@ func main() {
 	}
 
 	for _, account := range conf.Accounts {
+		var toot message
 		// Get feeds
 		log.Printf("Fetching feeds for account [%s]...", account.Name)
 		var feeds []*rss.Feed
 		for _, source := range account.Feeds {
+			toot.feed = source
+			if debug {
+				log.Printf("source:\n\n%v", source)
+			}
 			feed, err := rss.Fetch(source.URL)
 			if err != nil {
 				log.Printf("Error fetching %s: %s", source.URL, err.Error())
@@ -117,7 +122,9 @@ func main() {
 				if err != nil {
 					log.Fatalf("Error executing template [%s]. Error: %s", tpls[base.String()], err.Error())
 				}
-				if err = postMessage(account, buf.String(), formats[base.String()]); err != nil {
+				toot.account = account
+				toot.content = buf.String()
+				if err = toot.post(); err != nil {
 					log.Fatalf("Failed to post message \"%s\". Error: %s", buf.String(), err.Error())
 				}
 			}

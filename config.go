@@ -19,12 +19,11 @@ type feed struct {
 }
 
 type config struct {
-	Accounts    []Account
+	Accounts    []account
 	LastUpdated time.Time
 }
 
-// An Account holds the information required to use that account.
-type Account struct {
+type account struct {
 	AccessToken string
 	Name        string
 	InstanceURL string
@@ -44,6 +43,9 @@ func readConfig(fileName string) *config {
 	err = yaml.Unmarshal(cf, &config)
 	if err != nil {
 		log.Panic(err)
+	}
+	if debug {
+		log.Printf("Config:\n\n%v", config)
 	}
 	return config
 }

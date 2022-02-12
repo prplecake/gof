@@ -10,16 +10,28 @@ import (
 )
 
 type message struct {
+	account             account
+	content, visibility string
+	feed                feed
 }
 
-func postMessage(account Account, message string, format string) error {
-	apiURL := account.InstanceURL + "/api/v1/statuses"
+func (msg *message) post() error {
+	if debug {
+		log.Printf("msg:\n\n%v", msg)
+		log.Printf("msg.feed:\n\n%v", msg.feed)
+	}
+
+	apiURL := msg.account.InstanceURL + "/api/v1/statuses"
 
 	data := url.Values{}
-	data.Set("status", message)
 	data.Set("visibility", "unlisted")
+	data.Set("status", msg.content)
 
-	switch format {
+	if debug {
+		log.Printf("Data:\n\n%v", data)
+	}
+
+	switch msg.feed.Format {
 	case "markdown":
 		data.Set("content_type", "text/markdown")
 	case "html":
@@ -35,7 +47,7 @@ func postMessage(account Account, message string, format string) error {
 	body = strings.NewReader(data.Encode())
 
 	if debug {
-		log.Printf("Message:\n\n%s", message)
+		log.Printf("Message:\n\n%s", msg.content)
 	}
 
 	req, err := http.NewRequest("POST", apiURL, body)
@@ -43,9 +55,13 @@ func postMessage(account Account, message string, format string) error {
 		return err
 	}
 
+	if debug {
+		log.Printf("Request:\n\n%v", body)
+	}
+
 	// Set Headers
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.Header.Set("Authorization", "Bearer "+account.AccessToken)
+	req.Header.Set("Authorization", "Bearer "+msg.account.AccessToken)
 
 	c := &http.Client{Timeout: time.Second * 10}
 
