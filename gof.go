@@ -99,7 +99,6 @@ func main() {
 				}
 
 				// Make sure data looks OK
-				// TODO: remove before release
 				log.Printf("Item Data:\n\tTimestamp: %s\n\tSite URL: %s\n\tFeed Title: %s\n\tItem Title: %s\n\tItem URL: %s\n",
 					item.Date, base.ResolveReference(feedLink).String(),
 					feed.Title, item.Title, base.ResolveReference(itemLink).String())
