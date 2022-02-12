@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -26,6 +27,7 @@ func (msg *message) post() error {
 	data := url.Values{}
 	data.Set("status", msg.content)
 	data.Set("visibility", msg.feed.Visibility)
+	data.Set("sensitive", strconv.FormatBool(msg.feed.Sensitive))
 
 	if debug {
 		log.Printf("Data:\n\n%v", data)

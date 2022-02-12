@@ -17,6 +17,7 @@ type feed struct {
 	URL, Template string
 	Format        string
 	Visibility    string
+	Sensitive     bool
 }
 
 type config struct {

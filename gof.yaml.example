@@ -22,6 +22,11 @@ accounts:
     #   - private
     # Default: unlisted
     visibility: unlisted
+
+    # Sensitivity
+    #   true or false
+    # Default: false
+    sensitive: false
 - name: freeradical.zone
   accesstoken:
   instanceurl: https://freeradical.zone
