@@ -1,8 +1,8 @@
 # gof
 
 gof is a command-line utility to post RSS/Atom feeds to the fediverse.
-It has first-class support for [Pleroma][Pleroma], and thus should
-support Mastodon, too...
+It has first-class support for Pleroma, and thus should support Mastodon,
+too...
 
 gof is for "go feediverse", "go fediverse", "go fedi", or really
 whatever you want. gof is a port of [feediverse][feediverse] written in
@@ -10,7 +10,6 @@ Go.
 
 gof supports multiple feeds and multiple accounts.
 
-[Pleroma]: https://pleroma.social
 [feediverse]: https://github.com/edsu/feediverse
 
 ## requirements
@@ -29,10 +28,10 @@ $ cp gof.yaml.example gof.yaml
 $ vim gof.yaml # don't forget to edit it!
 ```
 
-You'll need an access token as well. You can get on from the [Pleroma
-Access Token Generator][pleroma-access-token].
+You'll need an access token as well. You can get on from the [Fediverse
+Instance Access Token Generator][fediverse-access-token].
 
-[pleroma-access-token]:https://tools.splat.soy/pleroma-access-token/
+[fediverse-access-token]:https://tools.splat.soy/fediverse-access-token/
 
 Build the thing:
 
@@ -54,8 +53,8 @@ $ ./gof -c /path/to/your/gof.yaml
 ```
 
 This would allow you to place the executable (and configuration)
-anywhere on your system.
-Once gof is configured, you might want to add it to your crontab:
+anywhere on your system. Once gof is configured, you might want to add it to
+your crontab, or your other favorite task scheduler:
 
 ```
 */30 * * * * cd /path/to/$REPO; gof
@@ -84,6 +83,8 @@ template: |-
 
   {{.URL}}
 ```
+
+### Pleroma instances
 
 Formatted posts are also supported. You can choose from plaintext,
 Markdown, HTML, or BBCode, as long as they’re supported by your Pleroma
