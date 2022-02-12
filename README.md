@@ -108,4 +108,4 @@ format: markdown
 
 See configuration details [in the wiki][wiki-formatting].
 
-[wiki-formatting]:https://github.com/prplecake/gof/wiki/Configuration#format
+[wiki-formatting]:https://github.com/prplecake/gof/wiki/Configuration-Options#template
