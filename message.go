@@ -24,8 +24,8 @@ func (msg *message) post() error {
 	apiURL := msg.account.InstanceURL + "/api/v1/statuses"
 
 	data := url.Values{}
-	data.Set("visibility", "unlisted")
 	data.Set("status", msg.content)
+	data.Set("visibility", msg.feed.Visibility)
 
 	if debug {
 		log.Printf("Data:\n\n%v", data)

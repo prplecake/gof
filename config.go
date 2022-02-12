@@ -16,6 +16,7 @@ var (
 type feed struct {
 	URL, Template string
 	Format        string
+	Visibility    string
 }
 
 type config struct {

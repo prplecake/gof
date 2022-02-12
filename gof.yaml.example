@@ -5,6 +5,23 @@ accounts:
   feeds:
   - url: https://yourfeed.com
     template: '{{.Title}} {{.URL}}'
+    
+    # Format
+    # One of:
+    #   - plain
+    #   - bbcode (pleroma only)
+    #   - html (pleroma only)
+    #   - markdown (pleroma only)
+    # Default: plain
+    format: markdown
+
+    # Visibility
+    # One of:
+    #   - public
+    #   - unlisted
+    #   - private
+    # Default: unlisted
+    visibility: unlisted
 - name: freeradical.zone
   accesstoken:
   instanceurl: https://freeradical.zone
@@ -14,4 +31,3 @@ accounts:
       {{.Title}}
 
       {{.URL}}
-    format: plain
