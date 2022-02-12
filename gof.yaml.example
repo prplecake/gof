@@ -5,7 +5,6 @@ accounts:
   feeds:
   - url: https://yourfeed.com
     template: '{{.Title}} {{.URL}}'
-    summary: true
 - name: freeradical.zone
   accesstoken:
   instanceurl: https://freeradical.zone
@@ -16,4 +15,3 @@ accounts:
 
       {{.URL}}
     format: plain
-    summary: false
