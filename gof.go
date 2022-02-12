@@ -120,7 +120,7 @@ func main() {
 				buf := new(bytes.Buffer)
 				err = tpls[base.String()].Execute(buf, i)
 				if err != nil {
-					log.Fatalf("Error executing template [%s]. Error: %s", tpls[base.String()], err.Error())
+					log.Fatalf("Error executing template [%v]. Error: %s", tpls[base.String()], err.Error())
 				}
 				toot.account = account
 				toot.content = buf.String()
