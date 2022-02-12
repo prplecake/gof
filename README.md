@@ -16,6 +16,12 @@ gof supports multiple feeds and multiple accounts.
 
 * Go 1.16
 
+## installation
+
+```
+go install github.com/prplecake/gof@latest
+```
+
 ## usage
 
 Before you can start using gof, you'll need to configure it. An example
