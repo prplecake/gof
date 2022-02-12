@@ -6,9 +6,9 @@ accounts:
   - url: https://yourfeed.com
     template: '{{.Title}} {{.URL}}'
     summary: true
-- name: splat.soy
+- name: freeradical.zone
   accesstoken:
-  instanceurl: https://splat.soy
+  instanceurl: https://freeradical.zone
   feeds:
   - url: https://your.otherfeed.net
     template: |-
