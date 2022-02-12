@@ -22,9 +22,8 @@ gof supports multiple feeds and multiple accounts.
 
 ## installation
 
-```
-go install github.com/prplecake/gof@latest
-```
+Download the latest release for your system from the
+[Releases page](https://github.com/prplecake/gof/releases/latest).
 
 ## usage
 
