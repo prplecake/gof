@@ -27,6 +27,11 @@ accounts:
     #   true or false
     # Default: false
     sensitive: false
+
+    # Content Warning
+    #   <string>
+    # Default: ""
+    contentwarning: 
 - name: freeradical.zone
   accesstoken:
   instanceurl: https://freeradical.zone

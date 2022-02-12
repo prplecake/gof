@@ -28,6 +28,7 @@ func (msg *message) post() error {
 	data.Set("status", msg.content)
 	data.Set("visibility", msg.feed.Visibility)
 	data.Set("sensitive", strconv.FormatBool(msg.feed.Sensitive))
+	data.Set("spoiler_text", msg.feed.ContentWarning)
 
 	if debug {
 		log.Printf("Data:\n\n%v", data)

@@ -14,10 +14,11 @@ var (
 )
 
 type feed struct {
-	URL, Template string
-	Format        string
-	Visibility    string
-	Sensitive     bool
+	URL, Template  string
+	Format         string
+	Visibility     string
+	Sensitive      bool
+	ContentWarning string
 }
 
 type config struct {
