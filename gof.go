@@ -94,7 +94,7 @@ func main() {
 
 			// Loop through items
 			for _, item := range items {
-				if item.Date.Before(conf.LastUpdated) {
+				if item.Date.Before(conf.LastUpdated) && !debug {
 					log.Println("No new items. Skipping.")
 					continue
 				}
