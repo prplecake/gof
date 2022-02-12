@@ -1,3 +1,7 @@
+[![Go](https://github.com/prplecake/gof/actions/workflows/go.yml/badge.svg)](https://github.com/prplecake/gof/actions/workflows/go.yml)
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/prplecake/gof?include_prereleases)](https://github.com/prplecake/gof/releases/latest)
+
+
 # gof
 
 gof is a command-line utility to post RSS/Atom feeds to the fediverse.
