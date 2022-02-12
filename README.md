@@ -33,8 +33,7 @@ configuration can be found [here][config-blob]. You can also just copy
 the example:
 
 ```
-$ cd $REPO
-$ cp gof.yaml.example gof.yaml
+$ cp gof.example.yaml gof.yaml
 $ vim gof.yaml # don't forget to edit it!
 ```
 
@@ -70,7 +69,7 @@ your crontab, or your other favorite task scheduler:
 */30 * * * * cd /path/to/$REPO; gof
 ```
 
-[config-blob]:https://github.com/prplecake/gof/blob/master/gof.yaml.example
+[config-blob]:https://github.com/prplecake/gof/blob/master/gof.example.yaml
 
 ## post format
 
