@@ -1,7 +1,6 @@
 [![Go](https://github.com/prplecake/gof/actions/workflows/go.yml/badge.svg)](https://github.com/prplecake/gof/actions/workflows/go.yml)
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/prplecake/gof?include_prereleases)](https://github.com/prplecake/gof/releases/latest)
 
-
 # gof
 
 gof is a command-line utility to post RSS/Atom feeds to the fediverse.
@@ -31,9 +30,9 @@ Before you can start using gof, you'll need to configure it. An example
 configuration can be found [here][config-blob]. You can also just copy
 the example:
 
-```
-$ cp gof.example.yaml gof.yaml
-$ vim gof.yaml # don't forget to edit it!
+```shell
+cp gof.example.yaml gof.yaml
+vim gof.yaml # don't forget to edit it!
 ```
 
 You'll need an access token as well. You can get on from the [Fediverse
@@ -43,28 +42,28 @@ Instance Access Token Generator][fediverse-access-token].
 
 Build the thing:
 
-```
-$ go build
+```shell
+go build
 ```
 
 Then you can use it:
 
-```
-$ ./gof
+```shell
+./gof
 ```
 
 You could also specify the configuration file to use via the command
 line:
 
-```
-$ ./gof -c /path/to/your/gof.yaml
+```shell
+./gof -c /path/to/your/gof.yaml
 ```
 
 This would allow you to place the executable (and configuration)
 anywhere on your system. Once gof is configured, you might want to add it to
 your crontab, or your other favorite task scheduler:
 
-```
+```text
 */30 * * * * cd /path/to/$REPO; gof
 ```
 
