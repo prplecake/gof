@@ -4,8 +4,13 @@
 # gof
 
 gof is a command-line utility to post RSS/Atom feeds to the fediverse.
-It has first-class support for Pleroma, and thus should support Mastodon,
-too...
+
+Confirmed working with:
+
+- Mastodon and forks such as,
+  - glitch-soc
+  - hometown
+- Pleroma
 
 gof is for "go feediverse", "go fediverse", "go fedi", or really
 whatever you want. gof is a port of [feediverse][feediverse] written in
@@ -24,6 +29,15 @@ gof supports multiple feeds and multiple accounts.
 Download the latest release for your system from the
 [Releases page](https://github.com/prplecake/gof/releases/latest).
 
+### from source
+
+Clone the repo and build the thing:
+
+```shell
+git clone https://github.com/prplecake/gof
+cd gof && go build
+```
+
 ## usage
 
 Before you can start using gof, you'll need to configure it. An example
@@ -39,12 +53,6 @@ You'll need an access token as well. You can get on from the [Fediverse
 Instance Access Token Generator][fediverse-access-token].
 
 [fediverse-access-token]:https://tools.splat.soy/fediverse-access-token/
-
-Build the thing:
-
-```shell
-go build
-```
 
 Then you can use it:
 
@@ -94,8 +102,7 @@ template: |-
 ### Pleroma instances
 
 Formatted posts are also supported. You can choose from plaintext,
-Markdown, HTML, or BBCode, as long as they’re supported by your Pleroma
-instance.
+Markdown, HTML, or BBCode, as long as they’re supported by your instance.
 
 ```yaml
 template: |-
