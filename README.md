@@ -13,8 +13,8 @@ Confirmed working with:
 - Pleroma
 
 gof is for "go feediverse", "go fediverse", "go fedi", or really
-whatever you want. gof is a port of [feediverse][feediverse] written in
-Go.
+whatever you want. gof started as a port of [feediverse][feediverse],
+written in Go.
 
 gof supports multiple feeds and multiple accounts.
 
@@ -49,10 +49,11 @@ cp gof.example.yaml gof.yaml
 vim gof.yaml # don't forget to edit it!
 ```
 
-You'll need an access token as well. You can get on from the [Fediverse
-Instance Access Token Generator][fediverse-access-token].
+You'll need an access token as well. On Mastodon you can get some from
+your settings page, and for others without a PAT UI, you can get on from
+the [Fediverse Instance Access Token Generator][fediverse-access-token].
 
-[fediverse-access-token]:https://tools.splat.soy/fediverse-access-token/
+[fediverse-access-token]:https://tools.splat.soy/pleroma-access-token/
 
 Then you can use it:
 
@@ -68,8 +69,8 @@ line:
 ```
 
 This would allow you to place the executable (and configuration)
-anywhere on your system. Once gof is configured, you might want to add it to
-your crontab, or your other favorite task scheduler:
+anywhere on your system. Once gof is configured, you might want to add
+it to your crontab, or your other favorite task scheduler:
 
 ```text
 */30 * * * * cd /path/to/$REPO; gof
@@ -99,10 +100,11 @@ template: |-
   {{.URL}}
 ```
 
-### Pleroma instances
+### Instances supporting formatted posts
 
 Formatted posts are also supported. You can choose from plaintext,
-Markdown, HTML, or BBCode, as long as they’re supported by your instance.
+Markdown, HTML, or BBCode, as long as they’re supported by your
+instance. Here's an example with Markdown:
 
 ```yaml
 template: |-
@@ -113,7 +115,3 @@ template: |-
   {{.URL}}
 format: markdown
 ```
-
-See configuration details [in the wiki][wiki-formatting].
-
-[wiki-formatting]:https://github.com/prplecake/gof/wiki/Configuration-Options#template
