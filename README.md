@@ -7,10 +7,10 @@ gof is a command-line utility to post RSS/Atom feeds to the fediverse.
 
 Confirmed working with:
 
-- Mastodon and forks such as,
-  - glitch-soc
-  - hometown
-- Pleroma
+* Mastodon and forks such as,
+  * glitch-soc
+  * hometown
+* Pleroma
 
 gof is for "go feediverse", "go fediverse", "go fedi", or really
 whatever you want. gof started as a port of [feediverse][feediverse],
