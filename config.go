@@ -65,6 +65,5 @@ func (cf *config) Save() error {
 	if err != nil {
 		return err
 	}
-
 	return nil
 }
