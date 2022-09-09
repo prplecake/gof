@@ -32,9 +32,9 @@ accounts:
     #   <string>
     # Default: ""
     contentwarning: 
-- name: freeradical.zone
+- name: compostintraining.club
   accesstoken:
-  instanceurl: https://freeradical.zone
+  instanceurl: https://compostintraining.club
   feeds:
   - url: https://your.otherfeed.net
     template: |-
