@@ -135,6 +135,9 @@ func main() {
 		// update timestamp in config
 		conf.updateLastUpdated()
 		// save config
-		conf.Save()
+		err := conf.Save()
+		if err != nil {
+			log.Fatalf("Failed to save config to file. Error: %s", err.Error())
+		}
 	}
 }
