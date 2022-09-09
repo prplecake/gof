@@ -59,11 +59,11 @@ func (cf *config) Save() error {
 	log.Println("saving config to file...")
 	cfBytes, err := yaml.Marshal(cf)
 	if err != nil {
-		log.Fatalln("Failed to marshal config: ", err.Error())
+		return err
 	}
 	err = os.WriteFile(configFile, cfBytes, 0644)
 	if err != nil {
-		log.Fatalf("Failed to save config to file. Error: %s", err.Error())
+		return err
 	}
 
 	return nil
