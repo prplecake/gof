@@ -51,17 +51,17 @@ func readConfig(fileName string) *config {
 }
 
 func (cf *config) updateLastUpdated() {
-	log.Println("updating lastupdated key...")
+	log.Println("updating LastUpdated key...")
 	cf.LastUpdated = time.Now()
 }
 
 func (cf *config) Save() error {
 	log.Println("saving config to file...")
-	cfbytes, err := yaml.Marshal(cf)
+	cfBytes, err := yaml.Marshal(cf)
 	if err != nil {
 		log.Fatalln("Failed to marshal config: ", err.Error())
 	}
-	err = os.WriteFile(configFile, cfbytes, 0644)
+	err = os.WriteFile(configFile, cfBytes, 0644)
 	if err != nil {
 		log.Fatalf("Failed to save config to file. Error: %s", err.Error())
 	}

@@ -39,15 +39,15 @@ func main() {
 
 	var tpls = make(map[string]*template.Template)
 	var formats = make(map[string]string)
-	for account_index, a := range conf.Accounts {
-		for feed_index, f := range a.Feeds {
+	for accountIndex, a := range conf.Accounts {
+		for feedIndex, f := range a.Feeds {
 			tmpl, err := template.New(f.URL).Parse(f.Template)
 			if err != nil {
 				log.Fatalf("Failed to parse template [%s]. Error: %s", f.Template, err.Error())
 			}
 			// Default format to "plain", if blank
 			if f.Format == "" {
-				conf.Accounts[account_index].Feeds[feed_index].Format = "plain"
+				conf.Accounts[accountIndex].Feeds[feedIndex].Format = "plain"
 				f.Format = "plain"
 			}
 			tpls[f.URL] = tmpl
