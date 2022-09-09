@@ -74,7 +74,9 @@ func (msg *message) post() error {
 		if err != nil {
 			return err
 		}
-		defer resp.Body.Close()
+		defer func(Body io.ReadCloser) {
+			_ = Body.Close()
+		}(resp.Body)
 
 		log.Println("response Status: ", resp.Status)
 	}
