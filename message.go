@@ -65,6 +65,7 @@ func (msg *message) post() error {
 	// Set Headers
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Set("Authorization", "Bearer "+msg.account.AccessToken)
+	req.Header.Set("User-Agent", conf.HttpConfig.UserAgent)
 
 	c := &http.Client{Timeout: time.Second * 10}
 

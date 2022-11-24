@@ -8,6 +8,10 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+const (
+	HttpUserAgent = "gof"
+)
+
 var (
 	configFile string
 )
@@ -23,6 +27,7 @@ type feed struct {
 type config struct {
 	Accounts    []account
 	LastUpdated time.Time
+	HttpConfig  httpConfig
 }
 
 type account struct {
@@ -30,6 +35,10 @@ type account struct {
 	Name        string
 	InstanceURL string
 	Feeds       []feed
+}
+
+type httpConfig struct {
+	UserAgent string
 }
 
 func readConfig(fileName string) *config {
@@ -47,6 +56,7 @@ func readConfig(fileName string) *config {
 	if debug {
 		log.Printf("Config:\n\n%v", config)
 	}
+	config.HttpConfig.UserAgent = HttpUserAgent
 	return config
 }
 
