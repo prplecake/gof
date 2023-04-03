@@ -1,5 +1,5 @@
-github.com/SlyMarbo/rss v1.0.3 h1:AnP63RxQxa0flEaiOryiTe5J5es0KCCfji6lU+rQ8tc=
-github.com/SlyMarbo/rss v1.0.3/go.mod h1:w6Bhn1BZs91q4OlEnJVZEUNRJmlbFmV7BkAlgCN8ofM=
+github.com/SlyMarbo/rss v1.0.5 h1:DPcZ4aOXXHJ5yNLXY1q/57frIixMmAvTtLxDE3fsMEI=
+github.com/SlyMarbo/rss v1.0.5/go.mod h1:w6Bhn1BZs91q4OlEnJVZEUNRJmlbFmV7BkAlgCN8ofM=
 github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394 h1:OYA+5W64v3OgClL+IrOD63t4i/RW7RqrAVl9LTZ9UqQ=
 github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394/go.mod h1:Q8n74mJTIgjX4RBBcHnJ05h//6/k6foqmgE45jTQtxg=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
