@@ -36,6 +36,8 @@ func main() {
 
 	log.Println("gof starting up...")
 	conf = readConfig(configFile)
+	log.Printf("Version: %s\n", conf.Meta.Version)
+	log.Printf("Build time: %s\n", conf.Meta.Buildtime)
 
 	var tpls = make(map[string]*template.Template)
 	var formats = make(map[string]string)
