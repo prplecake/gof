@@ -13,3 +13,6 @@ dry-run: build
 
 build:
 	go build -o gof $(GOFLAGS) .
+
+test: build
+	go test -v ./...
