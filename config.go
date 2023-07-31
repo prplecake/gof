@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"time"
@@ -8,11 +9,9 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-const (
-	HttpUserAgent = "gof"
-)
-
 var (
+	Version    string
+	Buildtime  string
 	configFile string
 )
 
@@ -28,6 +27,13 @@ type config struct {
 	Accounts    []account
 	LastUpdated time.Time
 	HttpConfig  httpConfig
+	Meta        meta
+}
+
+type meta struct {
+	Name      string
+	Version   string
+	Buildtime string
 }
 
 type account struct {
@@ -56,7 +62,11 @@ func readConfig(fileName string) *config {
 	if debug {
 		log.Printf("Config:\n\n%v", config)
 	}
-	config.HttpConfig.UserAgent = HttpUserAgent
+	config.Meta.Name = "gof"
+	config.Meta.Version = Version
+	config.Meta.Buildtime = Buildtime
+	config.HttpConfig.UserAgent = fmt.Sprintf("%s/%s",
+		config.Meta.Name, config.Meta.Version)
 	return config
 }
 
