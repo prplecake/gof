@@ -7,7 +7,7 @@ import (
 
 // TestUserAgent tests User Agent
 func TestUserAgent(t *testing.T) {
-	conf := readConfig("gof.example.yaml")
+	conf := readConfig("gpf.example.yaml")
 
 	if conf.HttpConfig.UserAgent == "" {
 		t.Error("UserAgent is blank")

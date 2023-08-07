@@ -1,0 +1,33 @@
+accounts:
+- accesstoken: 7EBEonTFnNqqHZ89OD-Ci2SafspZhZfdnHWdGrb8PVI
+  name: celsius.letemps.social
+  instanceurl: https://celsius.letemps.social
+  feeds:
+  - url: https://alerts.weather.gov/cap/ma.php?x=1
+    template: |-
+      Massachusetts
+      {{.Title}}
+
+      {{.Summary}}
+
+      {{.URL}}
+    format: plain
+    visibility: public
+    sensitive: false
+    contentwarning: ""
+  - url: https://alerts.weather.gov/cap/me.php?x=1
+    template: |-
+      Maine
+      {{.Title}}
+
+      {{.Summary}}
+
+      {{.URL}}
+    format: plain
+    visibility: public
+    sensitive: false
+    contentwarning: ""
+lastupdated: 2023-07-31T16:15:02.588297169Z
+httpconfig:
+  useragent: gof
+

@@ -1,0 +1,43 @@
+accounts:
+- name: instance.nice
+  accesstoken: 
+  instanceurl: https://yourinstance.nice
+  feeds:
+  - url: https://yourfeed.com
+    template: '{{.Title}} {{.URL}}'
+    
+    # Format
+    # One of:
+    #   - plain
+    #   - bbcode (pleroma only)
+    #   - html (pleroma only)
+    #   - markdown (pleroma only)
+    # Default: plain
+    format: markdown
+
+    # Visibility
+    # One of:
+    #   - public
+    #   - unlisted
+    #   - private
+    # Default: unlisted
+    visibility: unlisted
+
+    # Sensitivity
+    #   true or false
+    # Default: false
+    sensitive: false
+
+    # Content Warning
+    #   <string>
+    # Default: ""
+    contentwarning: 
+- name: compostintraining.club
+  accesstoken:
+  instanceurl: https://compostintraining.club
+  feeds:
+  - url: https://your.otherfeed.net
+    template: |-
+      {{.Title}}
+
+      {{.URL}}

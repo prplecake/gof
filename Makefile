@@ -6,13 +6,13 @@ GOLDFLAGS += -X main.Buildtime=$(BUILDTIME)
 GOFLAGS = -ldflags "$(GOLDFLAGS)"
 
 run: build
-	./gof
+	./gpf
 
 dry-run: build
-	./gof -dry-run
+	./gpf -dry-run
 
 build:
-	go build -o gof $(GOFLAGS) .
+	go build -o gpf $(GOFLAGS) .
 
 test: build
 	go test -v ./...

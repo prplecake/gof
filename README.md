@@ -1,3 +1,9 @@
+A fork from https://github.com/prplecake/gof
+
+Objective of my fork: Be able to use Common Alerting Protocol (CAP) 1.2 with improved granularity from upstream.
+
+
+
 [![Go](https://github.com/prplecake/gof/actions/workflows/go.yml/badge.svg)](https://github.com/prplecake/gof/actions/workflows/go.yml)
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/prplecake/gof?include_prereleases)](https://github.com/prplecake/gof/releases/latest)
 

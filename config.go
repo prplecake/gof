@@ -62,7 +62,7 @@ func readConfig(fileName string) *config {
 	if debug {
 		log.Printf("Config:\n\n%v", config)
 	}
-	config.Meta.Name = "gof"
+	config.Meta.Name = "gpf"
 	config.Meta.Version = Version
 	config.Meta.Buildtime = Buildtime
 	config.HttpConfig.UserAgent = fmt.Sprintf("%s/%s",
