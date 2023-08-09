@@ -72,7 +72,7 @@ func readConfig(fileName string) *config {
 
 func (cf *config) updateLastUpdated() {
 	log.Println("updating LastUpdated key...")
-	cf.LastUpdated = time.Now()
+	cf.LastUpdated = time.Now()  //need to think through timezones
 }
 
 func (cf *config) Save() error {
