@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
+	"gopkg.in/yaml.v3"
 	"log"
 	"os"
 	"time"
-
-	"gopkg.in/yaml.v3"
 )
 
 var (
@@ -21,7 +20,7 @@ type feed struct {
 	Visibility     string
 	Sensitive      bool
 	ContentWarning string
-	TimeJitter     int
+	TimeJitter     time.Duration
 }
 
 type config struct {
