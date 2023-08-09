@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v3"
 )
 
 var (
@@ -21,6 +21,7 @@ type feed struct {
 	Visibility     string
 	Sensitive      bool
 	ContentWarning string
+	TimeJitter     int
 }
 
 type config struct {

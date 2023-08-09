@@ -36,8 +36,12 @@ func main() {
 
 	log.Println("gpf starting up...")
 	conf = readConfig(configFile)
+
+	
+	
 	log.Printf("Version: %s\n", conf.Meta.Version)
 	log.Printf("Build time: %s\n", conf.Meta.Buildtime)
+	
 
 	var tpls = make(map[string]*template.Template)
 	var formats = make(map[string]string)
@@ -101,6 +105,13 @@ func main() {
 
 			// Loop through items
 			for _, item := range items {
+				// Add time jitter for nws warning feeds
+				// If there is no warning, the feed's update time is the same as the time being fetched from the server
+				// This creates problems where the nothing burger feed is effectively updated each time and reposted.
+				// It is very annoying
+				// field time jitter is expected to be in seconds: 
+				// conf.LastUpdated = conf.LastUpdated.Add(time.Second * TimeJitter)
+				// log.Println("time jitter is:", item.TimeJitter)
 				if item.Date.Before(conf.LastUpdated) && !debug {
 					log.Println("No new items. Skipping.")
 					continue

@@ -1,36 +1,62 @@
 accounts:
-- accesstoken: 7EBEonTFnNqqHZ89OD-Ci2SafspZhZfdnHWdGrb8PVI
-  name: celsius.letemps.social
-  instanceurl: https://celsius.letemps.social
-  feeds:
-  - url: https://alerts.weather.gov/cap/ma.php?x=1
-    template: |-
-      Massachusetts
-      {{.Title}}
+    - accesstoken: 7EBEonTFnNqqHZ89OD-Ci2SafspZhZfdnHWdGrb8PVI
+      name: celsius.letemps.social
+      instanceurl: https://celsius.letemps.social
+      feeds:
+        - url: https://alerts.weather.gov/cap/ma.php?x=1
+          template: |-
+            Massachusetts
+            {{.Title}}
 
-      {{.Summary}}
+            {{.Summary}}
 
-      {{.URL}}
-    format: plain
-    visibility: public
-    sensitive: false
-    contentwarning: ""
-  - url: https://alerts.weather.gov/cap/me.php?x=1
-    template: |-
-      Maine
-      {{.Title}}
+            {{.URL}}
+          format: plain
+          visibility: public
+          sensitive: false
+          contentwarning: tacos
+          timejitter: 0
+        - url: https://alerts.weather.gov/cap/me.php?x=1
+          template: |-
+            Maine
+            {{.Title}}
 
-      {{.Summary}}
+            {{.Summary}}
 
-      {{.URL}}
-    format: plain
-    visibility: public
-    sensitive: false
-    contentwarning: ""
-lastupdated: 2023-08-07T19:09:44.126053446-04:00
+            {{.URL}}
+          format: plain
+          visibility: public
+          sensitive: false
+          contentwarning: ""
+          timejitter: 0
+        - url: https://alerts.weather.gov/cap/um.php?x=1
+          template: |-
+            Midway Island
+            {{.Title}}
+
+            {{.Summary}}
+
+            {{.URL}}
+          format: plain
+          visibility: public
+          sensitive: false
+          contentwarning: ""
+          timejitter: 0
+        - url: https://wx1box.org/feed
+          template: |-
+            w1xbox
+            {{.Summary}}
+
+            {{.URL}}
+          format: plain
+          visibility: public
+          sensitive: false
+          contentwarning: ""
+          timejitter: 0
+lastupdated: 2023-08-08T13:55:20.254998042-04:00
 httpconfig:
-  useragent: gpf/1.1.3
+    useragent: gpf/1.1.3
 meta:
-  name: gpf
-  version: 1.1.3
-  buildtime: "2023-08-07T23:09:37Z"
+    name: gpf
+    version: 1.1.3
+    buildtime: "2023-08-08T01:24:53Z"
