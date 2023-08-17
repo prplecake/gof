@@ -1,6 +1,6 @@
 module github.com/prplecake/gof
 
-go 1.17
+go 1.21
 
 require (
 	github.com/SlyMarbo/rss v1.0.5
