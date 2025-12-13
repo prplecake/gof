@@ -1,4 +1,4 @@
-module git.fminus.co/prplecake/gof
+module github.com/prplecake/gof
 
 go 1.21
 

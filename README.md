@@ -1,3 +1,6 @@
+[![Go](https://github.com/prplecake/gof/actions/workflows/go.yml/badge.svg)](https://github.com/prplecake/gof/actions/workflows/go.yml)
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/prplecake/gof?include_prereleases)](https://github.com/prplecake/gof/releases/latest)
+
 # gof
 
 gof is a command-line utility to post RSS/Atom feeds to the fediverse.
@@ -24,14 +27,14 @@ gof supports multiple feeds and multiple accounts.
 ## installation
 
 Download the latest release for your system from the
-[Releases page](https://git.fminus.co/prplecake/gof/releases/latest).
+[Releases page](https://github.com/prplecake/gof/releases/latest).
 
 ### from source
 
 Clone the repo and build the thing:
 
 ```shell
-git clone https://git.fminus.co/prplecake/gof
+git clone https://github.com/prplecake/gof
 cd gof && go build
 ```
 
@@ -73,7 +76,7 @@ it to your crontab, or your other favorite task scheduler:
 */30 * * * * cd /path/to/$REPO; gof
 ```
 
-[config-blob]:https://git.fminus.co/prplecake/gof/src/branch/master/gof.example.yaml
+[config-blob]:https://github.com/prplecake/gof/blob/master/gof.example.yaml
 
 ## post format
 
